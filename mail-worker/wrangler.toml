@@ -6,12 +6,12 @@ keep_vars = true
 [observability]
 enabled = true
 
-#[[d1_databases]]
+[[d1_databases]]
 binding = "db"
 database_name = "cloud-mail"        # D1数据库的名字（截图中显示为cloud-mail）
 database_id = "3ddc1bd9-d60b-422c-b652-c64b06d8ae57"   # 从Cloudflare D1详情页复制
 
-#[[kv_namespaces]]
+[[kv_namespaces]]
 binding = "kv"
 id = "69fc76876eaa4d90845853060caa291a"               # 从Cloudflare KV详情页复制
 
