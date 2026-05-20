@@ -7,13 +7,13 @@ keep_vars = true
 enabled = true
 
 #[[d1_databases]]
-#binding = "db"			#d1数据库绑定名默认不可修改
-#database_name = ""		#d1数据库名字
-#database_id = ""		#d1数据库id
+binding = "db"
+database_name = "cloud-mail"        # D1数据库的名字（截图中显示为cloud-mail）
+database_id = "3ddc1bd9-d60b-422c-b652-c64b06d8ae57"   # 从Cloudflare D1详情页复制
 
 #[[kv_namespaces]]
-#binding = "kv"			#kv绑定名默认不可修改
-#id = ""					#kv数据库id
+binding = "kv"
+id = "69fc76876eaa4d90845853060caa291a"               # 从Cloudflare KV详情页复制
 
 #[[r2_buckets]]
 #binding = "r2"			#r2对象存储绑定名默认不可修改
@@ -36,12 +36,12 @@ crons = ["*/30 * * * *", "0 16 * * *"]	#每30分钟刷新分析缓存，每天�
 
 
 [vars]
-#ai_model = ""			#ai模型,不填默认使用@cf/meta/llama-3.1-8b-instruct
-#analysis_cache = false			#是否开启分析数据缓存
-#orm_log = false			#是否sql日志
-#domain = []				#邮件域名可可配置多个 示例: ["example1.com","example2.com"]
-#admin = ""				#管理员的邮箱	示例: admin@example.com
-#jwt_secret = ""			#jwt令牌的密钥,随便填一串字符串
+ai_model = "@cf/meta/llama-3.1-8b-instruct"			#ai模型,不填默认使用@cf/meta/llama-3.1-8b-instruct
+analysis_cache = true			#是否开启分析数据缓存
+orm_log = true			#是否sql日志
+domain = ["888591.xyz", "now.edu.kg"]				#邮件域名可可配置多个 示例: ["example1.com","example2.com"]
+admin = "admin@888591.xyz"				#管理员的邮箱	示例: admin@example.com
+jwt_secret = "cedzis-saxsU4-soxqag"			#jwt令牌的密钥,随便填一串字符串
 
 [build]
 command = "pnpm --prefix ../mail-vue install && pnpm --prefix ../mail-vue run build"
